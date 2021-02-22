@@ -1,0 +1,21 @@
+<mat-grid-list cols="4"
+               class="videos">
+  <mat-grid-tile [rowspan]="1"
+                 *ngFor="let video of videosService.videos$ | async">
+    <mat-card class="videos__card"
+              (click)="openModal(video)">
+      <img mat-card-image
+           [src]="video.preview"
+           [alt]="video.series">
+      <mat-card-content>
+        <h3 class="videos__title">{{ video.season }}</h3>
+        <h4>{{ video.series }} - {{video.part}}</h4>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-paginator [hidePageSize]="true"
+               [length]="videosService.total$ | async"
+               [pageSize]="8"
+               (page)="videosService.loadVideos($event.pageIndex + 1)">
+</mat-paginator>
