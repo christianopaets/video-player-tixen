@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>{{ data.video.series }} {{ data.video.part }}</h2>
-<mat-dialog-content class="video-modal">
+<div mat-dialog-content class="video-modal">
   <video #video
          class="video-modal__video"
          [src]="data.video.url"
          controls></video>
-</mat-dialog-content>
+</div>

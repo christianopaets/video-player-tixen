@@ -16,7 +16,7 @@ export class VideosService {
   }
 
   loadVideos(page: number): void {
-    this.http.get<{videos: IVideo[], total: number}>(`https://video-player-backend-christianopaets.vercel.app/videos?page=${page}&offset=${8}`)
+    this.http.get<{videos: IVideo[], total: number}>(`https://masterchef.ml/videos?page=${page}&offset=${8}&time=${Date.now()}`)
       .subscribe(res => {
         this._videos$.next(res.videos);
         this.total$.next(res.total)
