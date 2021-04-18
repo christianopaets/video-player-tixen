@@ -10,6 +10,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {VideosService} from './services/videos.service';
 
 @NgModule({
   declarations: [
@@ -23,9 +26,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     HttpClientModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [VideosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

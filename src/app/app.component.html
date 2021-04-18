@@ -1,4 +1,11 @@
 <mat-toolbar color="primary">
   <span>My Application</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button
+          class="favorite-icon"
+          aria-label="Refresh"
+          (click)="update()">
+    <mat-icon>refresh</mat-icon>
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

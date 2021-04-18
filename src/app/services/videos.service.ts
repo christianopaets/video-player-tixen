@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {IVideo} from './video.interface';
+import {IVideo} from '../videos/video.interface';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable()
@@ -21,5 +21,10 @@ export class VideosService {
         this._videos$.next(res.videos);
         this.total$.next(res.total)
       })
+  }
+
+  updateVideos(): void {
+    this.http.post<IVideo[]>(`https://masterchef.ml/videos`, {})
+      .subscribe();
   }
 }

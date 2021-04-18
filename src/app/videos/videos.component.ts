@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import {VideosService} from './videos.service';
+import {VideosService} from '../services/videos.service';
 import {IVideo} from './video.interface';
 import {MatDialog} from '@angular/material/dialog';
 import {VideoModalComponent} from './modules/video-modal/video-modal.component';
